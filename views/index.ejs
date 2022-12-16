@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		 <meta name="theme-color" content="#000000" />
+		<title>Ndobae</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+		<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="/" class="logo">
+									<h3 style="color:whitesmoke">Ndobae</h3>
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						
+
+						<!-- ACCOUNT -->
+						<div class="col-md-9 clearfix">
+							<div class="header-ctn">
+							
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="qty"><%=cart.length%></div>
+									</a>
+									
+									<div class="cart-dropdown">
+											
+										<div class="cart-list">
+								
+											<%cart.forEach(function(item){%>
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="../uploads/<%=item.photo%>" alt="">
+												</div>
+												
+												<div class="product-body">
+													<h3 class="product-name"><a href="#"><%=item.name%></a></h3>
+													<h4 class="product-price"><span class="qty"><%=item.qty%>x</span>GH₵<%=item.price%></h4>
+												</div>
+												
+											</div>
+											<%});%>
+								
+										</div>
+										<div class="cart-summary">
+											<small><%=cart.length%> Item(s) selected</small>
+											<h5>SUBTOTAL: GH₵<%=total%></h5>
+										</div>
+										<div class="cart-btns">
+											<a href="/empty_cart">Empty Cart</a>
+											<a href="/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+	
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/bfast.jpg" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Vegetables<br>Category</h3>
+								<a href="category/Breakfast" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/lunch.jpg" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Tubers<br>Category</h3>
+								<a href="/category/Lunch" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/supper.jpg" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Cereals<br>Category</h3>
+								<a href="/category/Supper" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+	
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">Top Products</h3>
+						</div>
+					</div>
+					<!-- /section title -->
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<%dat.forEach(function(item){%> 
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="../uploads/<%=item.prodimage%>" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#"><%=item.prodname%></a></h3>
+												<h4 class="product-price">GH₵<%=item.prodprice%></h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="quick-view"><a href="/details/<%=item.prodname%>">	<i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
+												</div>
+											</div>
+											<form method = "POST" action="/add_Checkout">
+												<input type="hidden" name="prodname" value="<%=item.prodname%>"/>	
+												<input type="hidden" name="prodimage" value="<%=item.prodimage%>"/>
+												<input type="hidden" name="prodprice" value="<%=item.prodprice%>"/>
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+											</div>
+											</form>
+										</div>
+										<!-- /product -->
+										<%});%>	
+									</div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Enter Your Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>Ndobae seeks to connects both the farmer and the consumer.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>Ghana </a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+233548684980</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>info.grenanalytics@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-6 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categories</h3>
+								<ul class="footer-links">
+									<li><a href="/category/Breakfast">Vegetables</a></li>
+									<li><a href="/category/Lunch">Tubers</a></li>
+									<li><a href="/category/Supper">Cereals</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<span class="copyright">
+								
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Ndobae
+							
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

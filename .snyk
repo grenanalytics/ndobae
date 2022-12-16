@@ -1,0 +1,61 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - express-validator > lodash:
+        patched: '2020-09-18T20:12:22.748Z'
+    - mongoose > async > lodash:
+        patched: '2020-09-18T20:12:22.748Z'
+    - save > async > lodash:
+        patched: '2020-09-18T20:12:22.748Z'
+    - snyk > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-cpp-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-go-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-gradle-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-docker-plugin > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-mvn-plugin > @snyk/java-call-graph-builder > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-php-plugin > @snyk/cli-interface > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-python-plugin > @snyk/cli-interface > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-gradle-plugin > @snyk/cli-interface > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-mvn-plugin > @snyk/cli-interface > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-09-18T20:13:19.710Z'
+    - snyk > snyk-docker-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-11-08T00:45:37.913Z'
+    - snyk > snyk-python-plugin > snyk-poetry-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-11-11T01:42:47.445Z'
+    - snyk > snyk-python-plugin > snyk-poetry-lockfile-parser > @snyk/cli-interface > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-11-11T01:42:47.445Z'
+    - snyk > snyk-nodejs-lockfile-parser > @yarnpkg/core > lodash:
+        patched: '2021-04-28T10:42:49.364Z'
+    - snyk > snyk-docker-plugin > snyk-nodejs-lockfile-parser > @yarnpkg/core > lodash:
+        patched: '2021-05-22T01:48:45.396Z'
+  'npm:debug:20170905':
+    - spelling-corrector > mocha > debug:
+        patched: '2021-09-21T08:32:39.696Z'
+  'npm:minimatch:20160620':
+    - spelling-corrector > mocha > glob > minimatch:
+        patched: '2021-09-21T08:32:39.696Z'
+  'npm:ms:20170412':
+    - spelling-corrector > mocha > debug > ms:
+        patched: '2021-09-21T08:32:39.696Z'
